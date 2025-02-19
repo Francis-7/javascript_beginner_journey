@@ -10,7 +10,11 @@ const subHeader = document.querySelector('#subHeading');
 let count = 1;
 button.addEventListener('click', () => {
     
-    subHeader.textContent = `the button was clicked ${count} times`
+    if (count === 1) {
+        subHeader.textContent = `the button was clicked ${count} time`
+    } else {
+        subHeader.textContent = `the button was clicked ${count} times`
+    }
     count++;
     button.textContent = 'Try again'
 })
