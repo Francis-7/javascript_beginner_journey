@@ -5,3 +5,5 @@ const html = document.querySelector('html')
 
 const button = document.querySelector('#button')
 const subHeader = document.querySelector('#subHeader')
+
+//this next line of code will do something with the button when is clicked by incrementing the count it was clicked
