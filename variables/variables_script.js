@@ -7,3 +7,9 @@ const button = document.querySelector('#button')
 const subHeader = document.querySelector('#subHeader')
 
 //this next line of code will do something with the button when is clicked by incrementing the count it was clicked
+button.addEventListener('click', () => {
+    let count = 1;
+    subHeader.textContent = `the button was clicked ${count} times`
+    count++;
+    button.textContent = 'Try again'
+})
