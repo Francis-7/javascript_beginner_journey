@@ -1,5 +1,5 @@
 const myLists = document.querySelector('#myLists');
-const listItem = document.createElement('li');
+
 const totalCost = document.createElement('p');
 
 const itemNeeded = 'shoe:15000, Boxer:12000, gas:98000, wardrobe:80000, bed:220000, fridge:300000, funiture:200000, houserent:450000, villagehose:2000000';
@@ -9,7 +9,8 @@ for (const item of items) {
     const [name, price] = item.split(':');
     const cprice = Number(price);
     total+=cprice;
-    listItem.textContent = `${name} -- ${price}`;
+    const listItem = document.createElement('li');
+    listItem.textContent = `${name.toUpperCase()} -- ${price}`;
     myLists.appendChild(listItem);
 }
 totalCost.textContent = `${total}`;
