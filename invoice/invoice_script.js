@@ -18,11 +18,19 @@ document.body.appendChild(totalCost);
 const button = document.createElement('button')
 button.textContent = 'Add More'
 
-button.addEventListener('click', update);
+
 const update = () => {
     const name = prompt('Enter item')
-    const price = prompt('Enter price')
-    const list = document.createElement('li').textContent = `${name} -- ${price}`
+    const price = prompt('Enter price') 
+    const product = name + ':' + price;
+    items.push(product);
+    const [a, b] = items[items.length-1].split(':')
+
+    const list = document.createElement('li')
+    list.textContent = `${a.toUpperCase()} -- ${price}`
     myLists.appendChild(list)
-    total += Number(price)
+    total += Number(b)
+    totalCost.textContent = `Total -- ${total}`;
 }
+button.addEventListener('click', update);
+document.body.appendChild(button)
