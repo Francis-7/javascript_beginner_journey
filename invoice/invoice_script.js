@@ -15,3 +15,4 @@ for (const item of items) {
 }
 totalCost.textContent = `Total -- ${total}`;
 document.body.appendChild(totalCost);
+const button = document.createElement('button')
