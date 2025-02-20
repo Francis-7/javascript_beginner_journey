@@ -16,3 +16,13 @@ for (const item of items) {
 totalCost.textContent = `Total -- ${total}`;
 document.body.appendChild(totalCost);
 const button = document.createElement('button')
+button.textContent = 'Add More'
+
+button.addEventListener('click', update);
+const update = () => {
+    const name = prompt('Enter item')
+    const price = prompt('Enter price')
+    const list = document.createElement('li').textContent = `${name} -- ${price}`
+    myLists.appendChild(list)
+    total += Number(price)
+}
