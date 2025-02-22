@@ -12,21 +12,21 @@ document.body.appendChild(para)
 document.body.appendChild(button)
 
 const myList = 'beverage:30000, meat:5000, oil:3000, transport:4000, vegetable:1000, fruit:2000'
-const myArray = myList.split(', ')
+const myArray = myList.split(', ').sort()
 button.addEventListener('click', () => {
     if (button.textContent === 'See list') {
-    myArray.forEach((item) => {
-        const [name, price] = item.split(':');
-        const list = document.createElement('li');
-        list.textContent = `${name.toUpperCase()} >> ${price}`
-        unOrdered.appendChild(list)
-    })
-    document.body.insertBefore(unOrdered, button)
-    button.textContent = 'hide list'
+        myArray.forEach((item) => {
+            const [name, price] = item.split(':');
+            const list = document.createElement('li');
+            list.textContent = `${name.toUpperCase()} >> ${price}`
+            unOrdered.appendChild(list)
+        })
+        document.body.insertBefore(unOrdered, button)
+        button.textContent = 'hide list'
 
     } else if (button.textContent === 'hide list') {
-        for (const a of unOrdered.childNodes) {
-            unOrdered.removeChild(a)
+        for (const a of unOrdered.children) {
+            a.parentNode.removeChild(a)
         }
        unOrdered.parentNode.removeChild(unOrdered)
         button.textContent = 'See list'
